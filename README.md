@@ -1,8 +1,5 @@
-# BOONFORGE IS CURRENTLY UNFINISHED
-Development has just started, k?
-
 # boonforge
-Curse CurseForge and their indecent bloatware! CLI application for easy modpack downloading.
+Curse CurseForge and their indecent bloatware! CLI application for easy CurseForge Minecraft modpack downloading.
 
 # Usage
 Download modfiles in a new folder in current directory (with URL)
