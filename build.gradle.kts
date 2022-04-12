@@ -1,11 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.20-RC"
+    kotlin("jvm") version "1.6.+"
+    kotlin("plugin.serialization") version "1.6.+"
+    application
 }
 
 group = "com.github.lacroixx13"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
+
+application {
+    mainClass.set("com.github.lacroixx13.boonforge.BoonForgeKt")
+}
 
 repositories {
     mavenCentral()
@@ -13,6 +19,9 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("com.github.ajalt.clikt:clikt:3.+")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("dev.akkinoc.util:yaml-resource-bundle:2.+")
 }
 
 tasks.test {

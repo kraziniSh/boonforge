@@ -1,0 +1,53 @@
+---
+# boonforge
+# Strings
+# Language: Default
+App: boonforge
+Version: "0.0.1"
+Language: default
+Authors:
+  - L9CRO1XX
+Translators: # Specific to this locale
+
+Constants:
+  ManifestFileName: manifest.json
+  Types:
+    Zip: zip
+
+BoonForge:
+  Help: |
+    boonforge - 0.0.1
+  
+    Curse CurseForge and their indecent bloatware!
+    
+    CLI app for easy CurseForge modpack downloading.
+  Run: |+
+    boonforge - 0.0.1
+# Keep as new line
+
+DownloadCommand:
+  Name: download
+  Help: Download files of a given modpack
+  Arguments:
+    Input: Modpack to downloadCmd files from
+  Gathering: Gathering required information...
+  Downloading: "Downloading: "
+
+CreditsCommand:
+  Name: credits
+  Help: Show credits
+
+ManifestJson:
+  Unknown:
+    Name: Unknown name
+    Version: Unknown version
+    Author: Unknown author
+    MinecraftVersion: Unknown minecraft version
+    ModLoader: Unknown mod loader
+
+Modpack:
+  DownloadFile:
+    Downloading: Downloading file
+    DownloadingProjectID: "with Project ID: "
+    DownloadingFileID: "and with File ID: "
+    Done: Done.
