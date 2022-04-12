@@ -13,3 +13,5 @@ Download modfiles in a new folder in current directory (with archive)
 Download and install in .minecraft
 
     boonforge install "https://www.curseforge.com/minecraft/modpacks/"
+# License
+[ISC License](LICENSE.md)
