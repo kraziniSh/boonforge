@@ -21,6 +21,7 @@ dependencies {
     testImplementation(kotlin("test"))
     implementation("com.github.ajalt.clikt:clikt:3.+")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("net.lingala.zip4j:zip4j:2.10.+")
     implementation("dev.akkinoc.util:yaml-resource-bundle:2.+")
 }
 

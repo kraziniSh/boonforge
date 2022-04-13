@@ -14,7 +14,13 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 
-### [Clikt](https://ajalt.github.io/clikt/), [yaml-resource-bundle](https://github.com/akkinoc/yaml-resource-bundle) and [kotlinx-serialization](https://github.com/Kotlin/kotlinx.serialization)
+
+<h2>
+   <a href = "https://ajalt.github.io/clikt/">Clikt</a>,
+   <a href = "https://github.com/Kotlin/kotlinx.serialization">kotlinx-serialization</a>,
+   <a href = "https://github.com/srikanth-lingala/zip4j">Zip4j</a> and
+   <a href = "https://github.com/akkinoc/yaml-resource-bundle">yaml-resource-bundle</a>
+</h2>
                               Apache License
                         Version 2.0, January 2004
                      http://www.apache.org/licenses/

@@ -9,6 +9,7 @@ val resourceBundle: ResourceBundle = ResourceBundle.getBundle(
     YamlResourceBundle.Control
 )
 
+// TODO Depend on system locale
 /**
  * Gets a string for the given key from the boonforge resource bundle.
  *

@@ -8,12 +8,12 @@ class BoonForge: CliktCommand(
     help = getResourceString("BoonForge.Help").trimIndent()
 ) {
     override fun run() {
-        echo(getResourceString("BoonForge.Run"), err = true)
+        echo(getResourceString("BoonForge.Run"))
         // TODO echo(Current language [...]) to be removed
         echo("Current language: ${getResourceString("Language")}", err = true)
     }
 }
 
 fun main(args: Array<String>): Unit = BoonForge()
-    .subcommands(DownloadCommand())
+    .subcommands(DownloadCommand(), CreditsCommand())
     .main(args)

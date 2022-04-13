@@ -2,11 +2,13 @@ package com.github.lacroixx13.boonforge
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
-import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.decodeFromStream
-import java.util.zip.ZipFile
+import net.lingala.zip4j.ZipFile
+import java.io.BufferedReader
+import java.nio.file.Path
 import kotlin.io.path.*
+import kotlin.system.exitProcess
 
 class DownloadCommand: CliktCommand(
     name = getResourceString("DownloadCommand.Name"),
@@ -15,7 +17,8 @@ class DownloadCommand: CliktCommand(
     private val input by argument(help = getResourceString("DownloadCommand.Arguments.Input"))
     private val output by argument() // TODO Output argument help
 
-    @ExperimentalSerializationApi
+    private val _bufferedReaderBufferSize = 1048576
+
     override fun run() {
         /* Strategy:
         Get input;
@@ -28,7 +31,7 @@ class DownloadCommand: CliktCommand(
         Download all files in a new folder, same parent as boonforge;
         Done.
          */
-        echo(getResourceString("DownloadCommand.Gathering"), err = true)
+        echo(getResourceString("DownloadCommand.Gathering"))
 
         // On the filesystem
         val inputPath = Path(input).toAbsolutePath()
@@ -36,25 +39,53 @@ class DownloadCommand: CliktCommand(
             when (inputPath.extension) {
                 "zip" -> {
                     val zipFile = ZipFile(inputPath.toFile())
+                    if (!zipFile.isValidZipFile) {
+                        echo("$input is not a valid .zip archive. Maybe it's damaged.", err = true)
+                        exitProcess(1) // TODO Union status codes together
+                    }
 
-                    val manifestJsonIS = zipFile.getInputStream(
-                        zipFile.getEntry("manifest.json")
+                    // So we can put manifest.json in it, and access it later
+                    val tempDirectory: Path = createTempDirectory("boonforge")
+
+                    zipFile.use { _zipFile ->
+                        _zipFile.extractFile(
+                            "manifest.json",
+                            tempDirectory.absolutePathString()
+                        )
+                    }
+
+                    val manifest = Path("${tempDirectory.pathString}/manifest.json")
+
+                    val manifestBR: BufferedReader = manifest.bufferedReader(
+                        bufferSize = _bufferedReaderBufferSize
                     )
-                    val manifestJsonDecoded = Json.decodeFromStream<Manifest>(manifestJsonIS)
 
-                    downloadFiles(manifestJsonDecoded)
+                    val decodedManifest = Json.decodeFromString<Manifest>(manifestBR.readText())
 
-                    val outputFolder = Path(output)
-                    outputFolder.createDirectories()
+                    manifestBR.close()
+                    manifest.deleteIfExists()
+                    tempDirectory.deleteIfExists()
 
-                    val overrides = zipFile.getInputStream(
-                        zipFile.getEntry(manifestJsonDecoded.overrides)
+                    // Files
+                    downloadFiles(decodedManifest)
+
+                    // Overrides
+                    // Get path, then call a fun from that?
+                    val outputDirectory = Path(output)
+                    outputDirectory.createDirectories()
+
+                    zipFile.extractFile(
+                        "${decodedManifest.overrides}/",
+                        outputDirectory.absolutePathString()
                     )
 
-                    val outputFolderStream = outputFolder.outputStream()
-                    outputFolderStream.buffered()
+                    echo("Extracted overrides")
 
                     zipFile.close()
+
+                    echo("Finished downloading modpack $input")
+
+                    exitProcess(0)
                 }
             }
         } // else if () {} // On the internet
