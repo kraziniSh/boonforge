@@ -1,8 +1,8 @@
 <h2>
    <a href = "https://ajalt.github.io/clikt/">Clikt</a>,
    <a href = "https://github.com/Kotlin/kotlinx.serialization">kotlinx-serialization</a>,
-   <a href = "https://github.com/srikanth-lingala/zip4j">Zip4j</a> and
-   <a href = "https://github.com/akkinoc/yaml-resource-bundle">yaml-resource-bundle</a>
+   <a href = "https://github.com/akkinoc/yaml-resource-bundle">yaml-resource-bundle</a> and
+   <a href = "https://github.com/srikanth-lingala/zip4j">Zip4j</a>
 </h2>
 
                               Apache License
