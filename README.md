@@ -1,5 +1,5 @@
 # boonforge
-Curse CurseForge and their indecent bloatware!
+Curse CurseForge and their covalent bloatware!
 
 **boonforge** is a CLI app for downloading CurseForge Minecraft modpacks.
 
