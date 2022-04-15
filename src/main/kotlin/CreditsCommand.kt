@@ -1,4 +1,4 @@
-package com.github.lacroixx13.boonforge
+package com.github.l9cro1xx.boonforge
 
 import com.github.ajalt.clikt.core.CliktCommand
 

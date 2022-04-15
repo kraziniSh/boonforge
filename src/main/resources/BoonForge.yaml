@@ -2,6 +2,14 @@
 # boonforge
 # Strings
 # Language: Default
+
+# Guidelines:
+# – We add the circumflex accent (or caret) (^) for string replacements.
+#   All other special characters make either Kotlin or YAML angry...
+#   Example:
+#     YAML → ^foo is not bar
+#     Kotlin → FooBar.replace("^foo", "bar")
+
 App: boonforge
 Version: "0.0.1"
 Language: default
@@ -30,8 +38,12 @@ DownloadCommand:
   Help: Download files of a given modpack
   Arguments:
     Input: Modpack to downloadCmd files from
+    Output: Directory to output files to
   Gathering: Gathering required information...
   Downloading: "Downloading: "
+  ExtractedOverrides: Extracted overrides.
+  Finished: Finished downloading modpack ^input
+  InvalidZipFile: ^input is not a valid .zip archive. Maybe it's damaged.
 
 CreditsCommand:
   Name: credits
@@ -47,7 +59,6 @@ ManifestJson:
 
 Modpack:
   DownloadFile:
-    Downloading: Downloading file
-    DownloadingProjectID: "with Project ID: "
-    DownloadingFileID: "and with File ID: "
+    Downloading: "Downloading file with Addon ID ^addonID and with File ID ^fileID"
+
     Done: Done.

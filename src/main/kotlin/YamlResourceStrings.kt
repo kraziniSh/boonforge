@@ -1,4 +1,4 @@
-package com.github.lacroixx13.boonforge
+package com.github.l9cro1xx.boonforge
 
 import dev.akkinoc.util.YamlResourceBundle
 import org.jetbrains.annotations.NotNull

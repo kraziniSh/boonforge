@@ -1,9 +1,28 @@
+Here are all projects and libraries, along with their licenses, used by boonforge or that helped boonforge’s development.
+
+Links lead to their respective (GitHub) repository.
+
+| Project                                                                  | Usage                                                | License                         |
+|--------------------------------------------------------------------------|------------------------------------------------------|---------------------------------|
+| [Clikt](https://github.com/ajalt/clikt/)                                 | Dependency                                           | Apache License 2.0              |
+| [JsonToKotlinClass](https://github.com/wuseal/JsonToKotlinClass)         | IntelliJ IDEA Plugin (helped generating serializers) | GNU General Public License v3.0 |
+| [kotlinx-serialization](https://github.com/Kotlin/kotlinx.serialization) | Dependency                                           | Apache License 2.0              |
+| [OkHttp](https://github.com/square/okhttp)                               | Dependency                                           | Apache License 2.0              |
+| [yaml-resource-bundle](https://github.com/akkinoc/yaml-resource-bundle)  | Dependency                                           | Apache License 2.0              |
+| [Zip4j](https://github.com/srikanth-lingala/zip4j)                       | Dependency                                           | Apache License 2.0              |
+
+_Note: I think that the current usage of JsonToKotlinClass does not require inclusion of the GNU GPL v3 license.
+Contact me ASAP if I’m wrong._
+
 <h2>
-   <a href = "https://ajalt.github.io/clikt/">Clikt</a>,
-   <a href = "https://github.com/Kotlin/kotlinx.serialization">kotlinx-serialization</a>,
-   <a href = "https://github.com/akkinoc/yaml-resource-bundle">yaml-resource-bundle</a> and
-   <a href = "https://github.com/srikanth-lingala/zip4j">Zip4j</a>
+    Clikt,
+    kotlinx-serialization,
+    OkHttp,
+    yaml-resource-bundle and
+    Zip4j
 </h2>
+
+<pre>
 
                               Apache License
                         Version 2.0, January 2004
@@ -206,3 +225,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+</pre>

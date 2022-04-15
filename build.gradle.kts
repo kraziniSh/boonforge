@@ -6,11 +6,11 @@ plugins {
     application
 }
 
-group = "com.github.lacroixx13"
+group = "com.github.l9cro1xx"
 version = "0.0.1"
 
 application {
-    mainClass.set("com.github.lacroixx13.boonforge.BoonForgeKt")
+    mainClass.set("com.github.l9cro1xx.boonforge.BoonForgeKt")
 }
 
 repositories {
@@ -19,10 +19,17 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("com.github.ajalt.clikt:clikt:3.+")
+    // Clikt: https://github.com/ajalt/clikt/
+    implementation("com.github.ajalt.clikt:clikt:3.4.1")
+    // kotlinx-serialization: https://github.com/Kotlin/kotlinx.serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-    implementation("net.lingala.zip4j:zip4j:2.10.+")
-    implementation("dev.akkinoc.util:yaml-resource-bundle:2.+")
+    // OkHttp: https://github.com/square/okhttp
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    // yaml-resource-bundle: https://github.com/akkinoc/yaml-resource-bundle
+    implementation("dev.akkinoc.util:yaml-resource-bundle:2.3.1")
+    // Zip4j: https://github.com/srikanth-lingala/zip4j
+    implementation("net.lingala.zip4j:zip4j:2.10.0")
+
 }
 
 tasks.test {

@@ -1,5 +1,11 @@
 # boonforge
-Curse CurseForge and their indecent bloatware! CLI application for easy CurseForge Minecraft modpack downloading.
+Curse CurseForge and their indecent bloatware!
+
+**boonforge** is a CLI app for downloading CurseForge Minecraft modpacks.
+
+# Installing
+### IF YOU ONLY HAVE MINECRAFT INSTALLED (no JRE/JDK)
+[//]: # (TODO Bundled Java instructions)
 
 # Usage
 Download modfiles in a new folder in current directory (with URL)
@@ -13,5 +19,3 @@ Download modfiles in a new folder in current directory (with archive)
 Download and install in .minecraft
 
     boonforge install "https://www.curseforge.com/minecraft/modpacks/"
-# License
-[ISC License](LICENSE.md)

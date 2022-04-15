@@ -1,11 +1,11 @@
-package com.github.lacroixx13.boonforge
+package com.github.l9cro1xx.boonforge
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
+import com.github.l9cro1xx.boonforge.jsonSerializers.Manifest
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import net.lingala.zip4j.ZipFile
-import java.io.BufferedReader
 import java.nio.file.Path
 import kotlin.io.path.*
 import kotlin.system.exitProcess
@@ -15,7 +15,7 @@ class DownloadCommand: CliktCommand(
     help = getResourceString("DownloadCommand.Help")
 ) {
     private val input by argument(help = getResourceString("DownloadCommand.Arguments.Input"))
-    private val output by argument() // TODO Output argument help
+    private val output by argument(help = getResourceString("DownloadCommand.Arguments.Output"))
 
     private val _bufferedReaderBufferSize = 1048576
 
@@ -33,61 +33,58 @@ class DownloadCommand: CliktCommand(
          */
         echo(getResourceString("DownloadCommand.Gathering"))
 
-        // On the filesystem
+        val outputDirectory = Path(output)
+        outputDirectory.createDirectories()
+
+        // On the filesystem.
         val inputPath = Path(input).toAbsolutePath()
         if (inputPath.exists()) {
             when (inputPath.extension) {
                 "zip" -> {
                     val zipFile = ZipFile(inputPath.toFile())
                     if (!zipFile.isValidZipFile) {
-                        echo("$input is not a valid .zip archive. Maybe it's damaged.", err = true)
+                        echo(getResourceString("DownloadCommand.InvalidZipFile".replace(
+                            "^input", input
+                        )), err = true)
                         exitProcess(1) // TODO Union status codes together
                     }
 
-                    // So we can put manifest.json in it, and access it later
+                    // So we can put manifest.json in it.
                     val tempDirectory: Path = createTempDirectory("boonforge")
 
-                    zipFile.use { _zipFile ->
-                        _zipFile.extractFile(
-                            "manifest.json",
-                            tempDirectory.absolutePathString()
-                        )
+                    zipFile.use {
+                        it.extractFile("manifest.json", tempDirectory.pathString)
                     }
 
                     val manifest = Path("${tempDirectory.pathString}/manifest.json")
 
-                    val manifestBR: BufferedReader = manifest.bufferedReader(
+                    val manifestBR = manifest.bufferedReader(
                         bufferSize = _bufferedReaderBufferSize
                     )
 
-                    val decodedManifest = Json.decodeFromString<Manifest>(manifestBR.readText())
+                    val manifestDecoded = manifestBR.use { _manifestBR ->
+                        Json.decodeFromString<Manifest>(_manifestBR.readText())
+                    }
 
                     manifestBR.close()
                     manifest.deleteIfExists()
                     tempDirectory.deleteIfExists()
 
-                    // Files
-                    downloadFiles(decodedManifest)
+                    downloadFiles(manifestDecoded, output)
 
-                    // Overrides
-                    // Get path, then call a fun from that?
-                    val outputDirectory = Path(output)
-                    outputDirectory.createDirectories()
+                    zipFile.use {
+                        it.extractFile("${manifestDecoded.overrides}/", outputDirectory.pathString)
+                    }
 
-                    zipFile.extractFile(
-                        "${decodedManifest.overrides}/",
-                        outputDirectory.absolutePathString()
-                    )
-
-                    echo("Extracted overrides")
+                    echo(getResourceString("DownloadCommand.ExtractedOverrides"))
 
                     zipFile.close()
 
-                    echo("Finished downloading modpack $input")
+                    echo(getResourceString("DownloadCommand.Finished".replace("^input", input)))
 
                     exitProcess(0)
                 }
             }
-        } // else if () {} // On the internet
+        } // else if () {} // On the internet.
     }
 }
