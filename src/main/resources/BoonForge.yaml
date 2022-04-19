@@ -33,6 +33,10 @@ BoonForge:
     boonforge - 0.0.1
 # Keep as new line
 
+CreditsCommand:
+  Name: credits
+  Help: Show credits
+
 DownloadCommand:
   Name: download
   Help: Download files of a given modpack
@@ -45,9 +49,15 @@ DownloadCommand:
   Finished: Finished downloading modpack ^input
   InvalidZipFile: ^input is not a valid .zip archive. Maybe it's damaged.
 
-CreditsCommand:
-  Name: credits
-  Help: Show credits
+VersionCommand:
+  Name: version
+  Help: Shows version and information about boonforge
+  Text: |
+    boonforge
+    
+    Version: 0.0.1
+    Build: master
+    Language: 
 
 ManifestJson:
   Unknown:

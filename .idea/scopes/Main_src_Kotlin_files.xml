@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Main src Kotlin files" pattern="file[boonforge.main]:*.kt" />
+</component>
