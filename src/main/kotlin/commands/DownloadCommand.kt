@@ -1,7 +1,17 @@
-package com.github.l9cro1xx.boonforge
+/*
+ Copyright (c) 2022 L9CRO1XX
+
+ This Source Code Form is subject to the terms of the Mozilla Public License,
+ v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain
+ one at https://mozilla.org/MPL/2.0/.
+ */
+
+package com.github.l9cro1xx.boonforge.commands
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
+import com.github.l9cro1xx.boonforge.downloadFiles
+import com.github.l9cro1xx.boonforge.getResourceString
 import com.github.l9cro1xx.boonforge.jsonSerializers.Manifest
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
@@ -80,6 +90,7 @@ class DownloadCommand: CliktCommand(
 
                     zipFile.close()
 
+                    // FIXME Replace not working?
                     echo(getResourceString("DownloadCommand.Finished".replace("^input", input)))
 
                     exitProcess(0)

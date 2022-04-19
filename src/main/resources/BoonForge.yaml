@@ -1,4 +1,10 @@
 ---
+# Copyright (c) 2022 L9CRO1XX
+#
+# This Source Code Form is subject to the terms of the Mozilla Public License,
+# v. 2.0. If a copy of the MPL was not distributed with this file, You can
+# obtain one at https://mozilla.org/MPL/2.0/.
+
 # boonforge
 # Strings
 # Language: Default
@@ -33,6 +39,10 @@ BoonForge:
     boonforge - 0.0.1
 # Keep as new line
 
+CreditsCommand:
+  Name: credits
+  Help: Show credits
+
 DownloadCommand:
   Name: download
   Help: Download files of a given modpack
@@ -45,9 +55,15 @@ DownloadCommand:
   Finished: Finished downloading modpack ^input
   InvalidZipFile: ^input is not a valid .zip archive. Maybe it's damaged.
 
-CreditsCommand:
-  Name: credits
-  Help: Show credits
+VersionCommand:
+  Name: version
+  Help: Shows version and information about boonforge
+  Text: |
+    boonforge
+    
+    Version: 0.0.1
+    Build: master
+    Language: 
 
 ManifestJson:
   Unknown:
