@@ -4,6 +4,10 @@ Curse CurseForge and their covalent bloatware!
 
 **boonforge** is a CLI app for downloading CurseForge Minecraft modpacks.
 
+## Heir
+
+Continued at http://l9cro1xx.github.io/boonforge, it it's continued...
+
 ## Abandonment
 
 I decided to drop boonforge.
