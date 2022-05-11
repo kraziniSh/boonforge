@@ -6,7 +6,7 @@ Curse CurseForge and their covalent bloatware!
 
 ## Heir
 
-Continued at http://l9cro1xx.github.io/boonforge, it it's continued...
+Continued at http://l9cro1xx.github.io/boonforge, if it's continued...
 
 ## Abandonment
 
