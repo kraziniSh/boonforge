@@ -3,6 +3,9 @@
     <module2copyright>
       <element module="Main src Kotlin files" copyright="MPL 2.0" />
     </module2copyright>
+    <LanguageOptions name="Properties">
+      <option name="filler" value="!" />
+    </LanguageOptions>
     <LanguageOptions name="__TEMPLATE__">
       <option name="prefixLines" value="false" />
     </LanguageOptions>

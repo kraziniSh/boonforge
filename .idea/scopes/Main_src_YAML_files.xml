@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Main src YAML files" pattern="file[boonforge.main]:resources/*.yaml" />
+</component>

@@ -1,0 +1,15 @@
+This is a sample CurseForge modpack.
+It has been retrieved fresh from the Download button.
+
+We use "Mustard Virus by Forge Labs", version 2.1.
+It is dedicated to the Public Domain, or in other words, licensed under the
+Public Domain.
+
+The file URL is:
+https://www.curseforge.com/minecraft/modpacks/zombie-apocalypse-slow-zombies-by
+-forge-labs/files/3510753
+
+Project ID: 445369
+File ID: 3510753
+
+NB: do not exceed 80 characters in each line, in this file.

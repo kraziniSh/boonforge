@@ -2,9 +2,9 @@
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.0.1   | :orange_circle: |
+| Version | Supported       |
+|---------|-----------------|
+| 0.1.0   | :orange_circle: |
 
 :heavy_check_mark:: Current
 

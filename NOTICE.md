@@ -1,28 +1,62 @@
-Here are all projects and libraries, along with their licenses, used by boonforge or that helped boonforge’s development.
+# Notice
 
-Links lead to their respective (GitHub) repository.
+Here are all projects and libraries, along with their licenses, used by boonforge or that helped
+boonforge's development.
 
-| Project                                                                  | Usage                                                | License                         |
-|--------------------------------------------------------------------------|------------------------------------------------------|---------------------------------|
-| [Clikt](https://github.com/ajalt/clikt/)                                 | Dependency                                           | Apache License 2.0              |
-| [JsonToKotlinClass](https://github.com/wuseal/JsonToKotlinClass)         | IntelliJ IDEA Plugin (helped generating serializers) | GNU General Public License v3.0 |
-| [kotlinx-serialization](https://github.com/Kotlin/kotlinx.serialization) | Dependency                                           | Apache License 2.0              |
-| [OkHttp](https://github.com/square/okhttp)                               | Dependency                                           | Apache License 2.0              |
-| [yaml-resource-bundle](https://github.com/akkinoc/yaml-resource-bundle)  | Dependency                                           | Apache License 2.0              |
-| [Zip4j](https://github.com/srikanth-lingala/zip4j)                       | Dependency                                           | Apache License 2.0              |
+Links lead to their respective repository (or CurseForge page for Mustard Virus)
 
-_Note: I think that the current usage of JsonToKotlinClass does not require inclusion of the GNU GPL v3 license.
-Contact me ASAP if I’m wrong._
+<table>
+    <thead>
+        <tr>
+        <th>Project</th>
+        <th>Usage</th>
+        <th>License</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="https://github.com/ajalt/clikt/">Clikt</a></td>
+            <td>Dependency</td>
+            <td>Apache License 2.0</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/Kotlin/kotlinx.serialization">kotlinx-serialization</a></td>
+            <td>Dependency</td>
+            <td>Apache License 2.0</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/square/okhttp">OkHttp</a></td>
+            <td>Dependency</td>
+            <td>Apache License 2.0</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/srikanth-lingala/zip4j">Zip4j</a></td>
+            <td>Dependency</td>
+            <td>Apache License 2.0</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/wuseal/JsonToKotlinClass">JsonToKotlinClass</a></td>
+            <td>IntelliJ IDEA Plugin (helped generating serializers)</td>
+            <td>GNU General Public License v3.0</td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Man CurseForge's really brain dead with these long ass links -->
+<a href="https://www.curseforge.com/minecraft/modpacks/zombie-apocalypse-slow-zombies-by-forge-labs">
+            Mustard Virus by Forge Labs
+</a>
+            </td>
+            <td>Sample modpack (used for tests)</td>
+            <td>Public Domain</td>
+        </tr>
+    </tbody>
+</table>
 
-<h2>
-    Clikt,
-    kotlinx-serialization,
-    OkHttp,
-    yaml-resource-bundle and
-    Zip4j
-</h2>
+_Note: Current usage of JsonToKotlinClass does not require inclusion of the GNU GPL v3 license._
 
-<pre>
+## Clikt, kotlinx-serialization, OkHttp andZip4j
+
+```text
 
                               Apache License
                         Version 2.0, January 2004
@@ -225,4 +259,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</pre>
+```
