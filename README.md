@@ -56,4 +56,5 @@ Download and install in `.minecraft`
 ## License
 
 ~~Mozilla Public License 2.0~~
-[MIT License](LICENSE.txt)
+~~MIT License~~
+[Mozilla Public License 2.0](LICENSE.txt)
